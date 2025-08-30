@@ -1,9 +1,7 @@
 from queue import Queue
-#from stack
 
 def FIFO(refString, strLength, frame):
     currentSet = set()
-    #pageFault= []
     queue = Queue()
     pageFault =0
     
@@ -64,7 +62,6 @@ def LRU(refString, strLength, frame):
             if len(currentSet) < frame:
                 currentSet.add(page)
             else:
-                # Remove least recently used (bottom of stack)
                 lru = stack.pop(0)
                 currentSet.remove(lru)
                 currentSet.add(page)
@@ -91,4 +88,5 @@ if __name__ == "__main__":
         print(f"LRU     Frames: {frame} --> Page Faults: {lruFault}")
         print(f"Optimal Frames: {frame} --> Page Faults: {optimalFault}")
         print("----")
+
 
